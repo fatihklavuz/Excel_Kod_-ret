@@ -1,0 +1,9 @@
+Private Sub CommandButton1_Click()
+Range("a4").Formula = "=CONCATENATE(A1,""_"",B1,""_"",C1)"
+Range("a4").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+Columns("A:A").EntireColumn.AutoFit
+End Sub
